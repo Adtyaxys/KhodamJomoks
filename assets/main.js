@@ -113,7 +113,7 @@ function cekKhodam(event) {
             ];
             
             const random = Math.floor(Math.random() * khodam.length);
-            resultText = `${nama.toUpperCase()} - LU JOMOKS ${khodam[random]}`;
+            resultText = `${nama.toUpperCase()} - LU DAPET : ${khodam[random]}`;
         } else {
             resultText = `${nama.toUpperCase()} - LU GA JOMOKS`;
         }
