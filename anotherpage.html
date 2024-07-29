@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Cek Khodam</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>HASIL CEK KHODAM</h1>
+            <div class="search">
+                <div class="hasil-khodam">
+                    <p id="result">Loading...</p>
+                </div>
+            </div>
+            <div class="backhome">
+                <button id="btn-back" class="bg-blue-500 text-white px-4 py-2 rounded">Back to Home</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const resultText = getQueryParam('result');
+            const resultElement = document.getElementById("result");
+
+            if (resultText) {
+                resultElement.textContent = resultText;
+            } else {
+                resultElement.textContent = "Tidak ada hasil untuk cek Khodam.";
+            }
+            
+            document.getElementById("btn-back").addEventListener("click", function() {
+                window.location.href = "index.html";
+            });
+        });
+    </script>
+</body>
+
+</html>
